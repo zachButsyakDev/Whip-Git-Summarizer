@@ -1,4 +1,4 @@
-Git Summarizer:
+Whip:
 Uses AI API calls to pass Git commit history alongside their respective files/messages to an AI to have it summarize to the user the changes in the codebase commit by commit.
 
 MVP:
@@ -30,3 +30,10 @@ STUFF 2 KNOW ABOUT GIT:
 
 ARCHITECTURAL SHIT:
 
+    Read: Open git-summary-state.txt to get your starting point.
+
+Compare: Query Git for everything that happened between that hash and the new HEAD.
+
+Summarize: Pass those changes to your AI.
+
+Update: Overwrite the file with the new HEAD.

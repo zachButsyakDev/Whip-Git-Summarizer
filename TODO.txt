@@ -10,3 +10,4 @@ TODO:
                 First check to see if you are in an active git repository. If you are not, exit code 1 and tell user to git init or fix their shit otherwise.
                 IF THEY ARE: Navigate to .git/ and make a text file entitled 'last_viewed.txt'
                     THEN write to that text file with the hash of the current head. That's it, that's the init.
+            DONE BITCH. BOOM.
