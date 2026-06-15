@@ -1,0 +1,12 @@
+TODO:
+1. Implement 'last viewed' system.
+	As git is stateless, my program will have no way of knowing what git snapshots the user will be familiar with. Thus, we need to have a 'bookmark' of where Git should start until it reaches the 
+	current head of the branch OR start from the head and read back until it hits last_viewed.
+	This will be determined by...
+		1. At startup, git summarizer will make a last_viewed text file containing the hash of this last viewed file. Then, once this is determined, when the summarization feature is run
+		on the repo, it sets it to the new head of the repo and keeps it there until summarized OR if the specific user commits. It will then reassign last_viewed to the head or to the
+		head/newest users commit.
+            TODO THAT:
+                First check to see if you are in an active git repository. If you are not, exit code 1 and tell user to git init or fix their shit otherwise.
+                IF THEY ARE: Navigate to .git/ and make a text file entitled 'last_viewed.txt'
+                    THEN write to that text file with the hash of the current head. That's it, that's the init.
