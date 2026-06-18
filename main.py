@@ -36,9 +36,6 @@ def write_new_last_seen():
         state.write(f"{get_current_head()}")
          
 def main():
-    if sys.argv[1] == "write":
-        write_new_last_seen()
-        return 0
     print_delta_test()
 
 if __name__ == "__main__":
