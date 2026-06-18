@@ -21,7 +21,8 @@ def print_delta_test()-> str:
     head = get_current_head()
     last_seen = get_last_seen()
     result = subprocess.run(["git", "diff", f"{head}", f"{last_seen}"], capture_output=True, text=True)
-    print result.stdout
+    print(result.stdout)
+    return result.stdout
 
     
 def write_new_last_seen():
@@ -35,6 +36,9 @@ def write_new_last_seen():
         state.write(f"{get_current_head()}")
          
 def main():
+    if sys.argv[1] == "write":
+        write_new_last_seen()
+        return 0
     print_delta_test()
 
 if __name__ == "__main__":
