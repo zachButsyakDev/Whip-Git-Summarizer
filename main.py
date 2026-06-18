@@ -10,11 +10,11 @@ def get_last_seen():
         print("Exited with error code: 1")
         sys.exit("Git repository not initialized. Please initialize a git repository via \'git init\' or otherwise run this in a directory with a valid git repository.")
     with(path / 'git-summary-state.txt').open('r') as state:
-        return state.read()
+        return state.read().strip()
 
 def get_current_head() -> str:
     result = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True)
-    return result.stdout
+    return result.stdout.strip()
 
 
 def print_delta_test()-> str:
