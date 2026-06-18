@@ -1,5 +1,5 @@
 TODO:
-1. Implement 'last viewed' system.
+Day 1. Implement 'last viewed' system.
 	As git is stateless, my program will have no way of knowing what git snapshots the user will be familiar with. Thus, we need to have a 'bookmark' of where Git should start until it reaches the 
 	current head of the branch OR start from the head and read back until it hits last_viewed.
 	This will be determined by...
@@ -11,3 +11,11 @@ TODO:
                 IF THEY ARE: Navigate to .git/ and make a text file entitled 'last_viewed.txt'
                     THEN write to that text file with the hash of the current head. That's it, that's the init.
             DONE BITCH. BOOM.
+ Day 2. Read deltas between last seen hash and head
+     Figure out a way to access the deltas between the last seen and the current head. This is going to be changed later to loop between
+     the two, but for now I'll just do this to lay the groundwork for later.
+     I'm going to design a function that takes in one string representing a hash, in the current case this will be the head hash, and then
+     try to print out the delta between that and the last-seen-hash in the git file. Also I'm going to get rid of the formatting bit for 
+     now, I might change it back or have it follow JSON to make it easier to read for AI though, maybe, or for better formatting.
+         wont actually do that, no reason to it seems like, user shouldn't have to interface with that stuff at all.
+     ANYWAY. Todo for the day, we need to implement the get_last_seen() function, which will just return the last string hash as a string
