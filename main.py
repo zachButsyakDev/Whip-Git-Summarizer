@@ -18,10 +18,12 @@ def get_current_head() -> str:
     return result.stdout.strip()
 
 
-def get_delta()-> str:
+def get_delta() -> str:
     head = get_current_head()
     last_seen = get_last_seen()
-    result = subprocess.run(["git", "diff", f"{head}", f"{last_seen}"], capture_output=True, text=True)
+    if head == last_seen:
+        sys.exit("No changes since last seen commit.")
+    result = subprocess.run(["git", "diff", head, last_seen], capture_output=True, text=True)
     return result.stdout
 
     
@@ -36,8 +38,19 @@ def write_new_last_seen():
         state.write(f"{get_current_head()}")
          
 def main():
-   print(ai.summarize(get_delta()))
+    if len(sys.argv) < 2:
+        sys.exit("No arguments provided. Use 'write' or 'summarize'.")
     
+    
+    lowercase_argv = [word.lower() for word in sys.argv]
+    if lowercase_argv[1] == "write":
+        write_new_last_seen()
+        return
+    elif lowercase_argv[1] == "summarize": 
+        print(ai.summarize(get_delta()))
+        return
+    else:
+        sys.exit("Invalid CLI arguments. Use arguments \'write/summarize.\'")
     
 if  __name__ == "__main__":
     main()
