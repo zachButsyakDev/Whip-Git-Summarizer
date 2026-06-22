@@ -19,3 +19,5 @@ Day 1. Implement 'last viewed' system.
      now, I might change it back or have it follow JSON to make it easier to read for AI though, maybe, or for better formatting.
          wont actually do that, no reason to it seems like, user shouldn't have to interface with that stuff at all.
      ANYWAY. Todo for the day, we need to implement the get_last_seen() function, which will just return the last string hash as a string
+ Day 3. Send off delta between last seen and head to AI.
+     This day should hopefully be pretty simple. I really just need to learn how to send off the delta to the API and get it back. It'll read the delta SOMEHOW... some architecting work will have to occur here. Either outputs it to a temporary txt file which is then read from ai_module.py or reads it from stdout somehow. Either way, write the deltas to SOME readable format (currently that is stdout) and send that off to an AI to summarize it and print THAT out to stdout.
