@@ -1,5 +1,6 @@
 import subprocess
 from pathlib import Path
+import ai_module as ai
 import sys
 
 
@@ -21,7 +22,6 @@ def get_delta()-> str:
     head = get_current_head()
     last_seen = get_last_seen()
     result = subprocess.run(["git", "diff", f"{head}", f"{last_seen}"], capture_output=True, text=True)
-    print(result.stdout)
     return result.stdout
 
     
@@ -36,7 +36,8 @@ def write_new_last_seen():
         state.write(f"{get_current_head()}")
          
 def main():
-    get_delta()
-
-if __name__ == "__main__":
+   print(ai.summarize(get_delta()))
+    
+    
+if  __name__ == "__main__":
     main()

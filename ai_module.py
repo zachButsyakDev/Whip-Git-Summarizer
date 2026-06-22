@@ -10,4 +10,4 @@ def summarize(delta: str):
         model="gemini-3.5-flash",
         input=f"You are a senior software engineer. Explain the changes made to the given git repository between the users last seen commit and the head commit, given as a git diff:\n\n{delta}"
     )
-    print(interaction.output_text)
+    return interaction.output_text
