@@ -23,7 +23,7 @@ def get_delta() -> str:
     last_seen = get_last_seen()
     if head == last_seen:
         sys.exit("No changes since last seen commit.")
-    result = subprocess.run(["git", "diff", head, last_seen], capture_output=True, text=True)
+    result = subprocess.run(["git", "diff", last_seen, head], capture_output=True, text=True)
     return result.stdout
 
     
