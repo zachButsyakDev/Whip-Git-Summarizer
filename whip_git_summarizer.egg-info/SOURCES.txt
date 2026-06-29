@@ -1,0 +1,15 @@
+README.md
+ai_module.py
+config.py
+gemini_provider.py
+main.py
+model_provider.py
+ollama_provider.py
+openai_provider.py
+pyproject.toml
+whip_git_summarizer.egg-info/PKG-INFO
+whip_git_summarizer.egg-info/SOURCES.txt
+whip_git_summarizer.egg-info/dependency_links.txt
+whip_git_summarizer.egg-info/entry_points.txt
+whip_git_summarizer.egg-info/requires.txt
+whip_git_summarizer.egg-info/top_level.txt

@@ -1,0 +1,2 @@
+[console_scripts]
+whip = main:main
