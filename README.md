@@ -1,4 +1,4 @@
-# Whip - What Happened In Progrress - Git Change Summarizer
+# Whip - What Happened In Progress - Git Change Summarizer
 
 Whip uses AI to automatically summarize git commit history and code changes. It analyzes diffs between commits and generates human-readable summaries of what changed in your codebase.
 
