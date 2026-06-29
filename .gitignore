@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 venv/
 .venv/
+.kiro/
+.whip_git_summarizer.egg-info/
